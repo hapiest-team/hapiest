@@ -96,7 +96,7 @@ class MainWindowGui(QtWidgets.QMainWindow):
 
         self.parent = window
 
-        uic.loadUi('layouts/main_window.ui', self)
+        uic.loadUi('../layouts/main_window.ui', self)
 
         self.init_molecule_list()
 
