@@ -79,7 +79,7 @@ class FetchWidget(QWidget):
         # Set the molecule_id change method to the one we defined in the class
         self.molecule_id.currentIndexChanged.connect(self.__molecule_id_text_changed)
 
-        QToolTip.setFont(QFont('SansSerif', 10))
+        # QToolTip.setFont(QFont('SansSerif', 10))
         self.param_group_list.setToolTip('Specifies "non-standard" parameter to query.')
         self.param_list.setToolTip('Specifies parameters to query.')
         self.iso_list.setToolTip('Select the molecule isotopologues you wish to query.')
@@ -142,6 +142,7 @@ class FetchWidget(QWidget):
         Populates the parameter lists with all parameters from a specific group.
         """
         ba = ParameterAvailability(self.molecule_id.currentText())
+        print(ba)
         if not ba.molecule.populated:
             return
 
@@ -151,7 +152,9 @@ class FetchWidget(QWidget):
         self.parameter_items = {}
         self.parameter_group_items = {}
 
-        for group in sorted(list(ba.parameter_groups()), key=str.lower):
+        # TODO: Fix parameter availability so the filtered groups can be used rather than all
+        # for group in sorted(list(ba.parameter_groups()), key=str.lower):
+        for group in sorted(list(hapi.PARAMETER_GROUPS.keys()), key=str.lower):
             item = QtWidgets.QListWidgetItem(group)
             item.setFlags(item.flags() | QtCore.Qt.ItemIsUserCheckable | QtCore.Qt.ItemIsEnabled)
 
@@ -160,8 +163,8 @@ class FetchWidget(QWidget):
             self.parameter_group_items[group] = item
             self.param_group_list.addItem(item)
 
-        # Add all parameter groups to the parameter groups list.
-        for par in sorted(list(ba.parameters()), key=str.lower):
+        # TODO: Fix parameter availability so the filtered parameters can be used rather than all
+        for par in sorted(list(hapi.PARLIST_ALL), key=str.lower):
             item = QtWidgets.QListWidgetItem(par)
             item.setFlags(item.flags() | QtCore.Qt.ItemIsUserCheckable | QtCore.Qt.ItemIsEnabled)
 

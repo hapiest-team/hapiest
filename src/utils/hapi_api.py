@@ -116,7 +116,7 @@ class CrossSectionApi:
     http://hitran.org/data/xsec/HNO4_220.0_0.1_780.0-830.0_04.xsc
     """
 
-    BASE_URL = "http://hitran.org/"
+    BASE_URL = "http://hitran.org"
     API_ROUTE = "api/dev"
     XSC_META_ROUTE = "cross-sections"
     XSC_ROUTE = "data/xsec"

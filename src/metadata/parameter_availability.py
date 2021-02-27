@@ -29,7 +29,6 @@ class ParameterAvailability:
         "n_he": "n_He",
         "n_h2": "n_H2",
         "n_co2": "n_CO2",
-
     }
 
     @staticmethod
@@ -57,6 +56,7 @@ class ParameterAvailability:
         with open("res/parameters/availability.json") as f:
             contents = f.read()
         ParameterAvailability.__AVAILABILITY = json.loads(contents)
+        print(ParameterAvailability.__AVAILABILITY)
         keys = {k for k in ParameterAvailability.__AVAILABILITY}
         for k in keys:
             ParameterAvailability.__AVAILABILITY[int(k)] = ParameterAvailability.__AVAILABILITY[k]

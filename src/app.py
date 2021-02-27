@@ -44,6 +44,8 @@ def check_internet_connection_and_obtain_api_key():
     """
     import urllib.request
     from utils.hapi_api import CrossSectionApi
+    print(f"{CrossSectionApi.BASE_URL}/{CrossSectionApi.API_ROUTE}/{Config.hapi_api_key}/" \
+                        f"{CrossSectionApi.XSC_META_ROUTE}")
 
     print(f"API Key: {Config.hapi_api_key}")
     try:
@@ -52,7 +54,8 @@ def check_internet_connection_and_obtain_api_key():
                         f"{CrossSectionApi.XSC_META_ROUTE}"):
             pass
         return True
-    except HTTPError as _:
+    except HTTPError as x:
+        print(x)
         # An HTTP error code was given the response. This means the APIKEY was invalid
         err_msg = """
 Your HAPI API key will be used on the next launch. Please restart HAPIEST.
@@ -104,7 +107,9 @@ def run():
             elif sys.argv[1] in ("-gba", "--generate-broadener-availability"):
                 import res_gen.generate_broadener_availability as gba
                 gba.generate_availability()
+                print("ok")
                 return 0
+
     if Config.high_dpi:
         # Enable High DPI display with PyQt5
         QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling, True)
