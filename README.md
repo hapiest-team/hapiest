@@ -2,21 +2,18 @@
 *hapiest* is a GUI that works with the HITRAN API, enabling access
 to all sorts of spectrographic data without knowledge of python.
 
-*hapiest* is still in it's alpha stage of development. 
-## Manual
-The most up to date version of the manual can be downloaded [here](https://github.com/hitranonline/hapiest/raw/master/docs/manual.pdf).
+*hapiest* is still in it's alpha stage of development.
 
-## License 
-*hapiest* is licensed under the LGPL license.
+## Usage + Manual
+A manual that documents what hapiest can do can be found 
+[here](https://github.com/hitranonline/hapiest/raw/master/doc/HAPIESTmanual.pdf).
+The manual is a work in progress but is mostly complete. 
 
 ## Download
-You can download an executable for your system [here.](https://github.com/hitranonline/hapiest/releases/tag/v0.2-alpha)
+You can download an executable for your system [here.](https://github.com/hitranonline/hapiest/releases)
 
-Currently 32 bit (x86) Windows and Linux machines are not supported but they will be eventually.
-
-## Usage
-A manual that documents what hapiest can do can be found 
-[here](https://github.com/hitranonline/hapiest/raw/master/doc/HAPIESTmanual.pdf) (this link will download the PDF file).
+Currently 32 bit (x86) Windows and Linux machines are not supported, but you can run the program from source
+on these platforms.
 
 ## How to Manually Install
 Hapiest has a limited number of binary packages, but the program itself can be
@@ -51,6 +48,8 @@ python3.6 src
 You may have to replace `python` in the above commands with `python3`, `python3.6`, `python3.x`, etc., depending on your specific
 configuration.
 
+If you encounter issues with these instructions please feel free to open an issue or email josh@mail.rit.edu.
+
 ## Troubleshooting
 *hapiest* is still an immature piece of software. If you encounter any bugs, you're encouraged to open an issue with
 your bug report.
@@ -64,3 +63,6 @@ R.V. Kochanov, I.E. Gordon, L.S. Rothman, P. Wcislo, C. Hill, J.S. Wilzewski, HI
 (HAPI): A comprehensive approach to working with spectroscopic data, J. Quant. Spectrosc. Radiat. Transfer 177, 15-30
 (2016) [http://www.sciencedirect.com/science/article/pii/S0022407315302466?via%3Dihub].
 ```
+
+## License 
+*hapiest* is licensed under the LGPL license.
