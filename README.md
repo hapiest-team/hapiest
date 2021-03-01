@@ -20,7 +20,7 @@ A manual that documents what hapiest can do can be found
 
 ## How to Manually Install
 Hapiest has a limited number of binary packages, but the program itself can be
-downloaded
+downloaded and ran from its source code quite easily.
 
 *You must have python 3.6 or later to install and use hapiest*.
 
@@ -33,10 +33,14 @@ git clone https://github.com/hitranonline/hapiest
 This will download the latest version of hapiest and put it in a folder named hapiest. In order to run *hapiest*, 
 you must have all of the packages listen in requirements.txt installed. 
 
+It is recommended you install these packages using a [virtual environment](https://docs.python.org/3/tutorial/venv.html).
+
 To install these packages automatically, you can run the following command:
 ```bash
 pip install -r requirements.txt
 ```
+Note that your pip program may be called pip3.
+
 
 Then, to run the program execute the following:
 ```bash
@@ -44,14 +48,11 @@ cd hapiest
 python3.6 src
 ```
     
-You may have to replace `python` in the above commands with `python3` or `python3.6` depending on your specific
+You may have to replace `python` in the above commands with `python3`, `python3.6`, `python3.x`, etc., depending on your specific
 configuration.
 
-After you install hapiest, you can start it by calling `run` in a command prompt or terminal. If you are on mac you may
-have to edit the `run` file and replace `python` with `python3` or `python3.6`.
-
 ## Troubleshooting
-*hapiest* is still a very immature piece of software. If you encounter any bugs, you're encouraged to open an issue with
+*hapiest* is still an immature piece of software. If you encounter any bugs, you're encouraged to open an issue with
 your bug report.
 
 # References
