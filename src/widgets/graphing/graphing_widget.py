@@ -187,7 +187,7 @@ class GraphingWidget(QtWidgets.QWidget):
     def graph_xsc(self, standard_params):
         work = HapiWorker.echo(title=GraphingWidget.XSC_STRING,
                                titlex="Wavenumber (cm$^{-1}$)",
-                               titley="Intensity",
+                               titley="Absorption Coefficient (cm$^2$/molecule)",
                                **standard_params)
         if self.use_existing_window.isChecked():
             selected_window = self.get_selected_window()

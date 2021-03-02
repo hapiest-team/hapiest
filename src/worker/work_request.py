@@ -87,7 +87,6 @@ class Work:
             print('\n'.join([''] + traceback.format_tb(tb) + [str(exc_value)]).replace('\n',
                                                                                        '\n    |   '
                                                                                        '') + '\n')
-
         while True:
             work_request = workq.get()
             if work_request.work_type == WorkRequest.END_WORK_PROCESS:

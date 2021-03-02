@@ -23,6 +23,10 @@ def fix_cwd():
     If someone launches the program through the command 'python3 __main__.py', the current working
     directory is in the wrong place. This moves it to where it should be.
     """
+    # If this is a binary
+    if getattr(sys, 'frozen', False):
+        return
+
     src_regex = re.compile('.+src\\Z')
     if src_regex.match(os.getcwd()):
         os.chdir('..')
