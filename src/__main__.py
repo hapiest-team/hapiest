@@ -7,6 +7,7 @@ import sys, os
 if getattr(sys, 'frozen', False):
     os.environ['JOBLIB_MULTIPROCESSING'] = '0'
 
+import multiprocessing
 from multiprocessing import freeze_support, set_start_method
 multiprocessing.set_start_method('forkserver', force=True)
 freeze_support()
