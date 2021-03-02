@@ -23,7 +23,7 @@ exe = EXE(pyz,
           debug=False,
           strip=False,
           upx=True,
-          console=True )
+          console=False )
 coll = COLLECT(exe,
                a.binaries,
                a.zipfiles,
@@ -31,3 +31,8 @@ coll = COLLECT(exe,
                strip=False,
                upx=True,
                name='hapiest')
+app = BUNDLE(exe,
+        name='hapiest.app',
+        icon='res/img/icons/icon.png',
+        bundle_identifier=None)
+

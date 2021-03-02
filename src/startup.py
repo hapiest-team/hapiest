@@ -5,6 +5,7 @@ is started.
 import os
 import re
 import sys
+import pathlib
 
 
 def check_version():
@@ -24,8 +25,12 @@ def fix_cwd():
     directory is in the wrong place. This moves it to where it should be.
     """
     # If this is a binary
+    print("AAA")
+    print(os.getcwd())
     if getattr(sys, 'frozen', False):
-        return
+        p = pathlib.Path(sys.argv[0])
+        parent = p.parent
+        os.chdir(parent)
 
     src_regex = re.compile('.+src\\Z')
     if src_regex.match(os.getcwd()):
